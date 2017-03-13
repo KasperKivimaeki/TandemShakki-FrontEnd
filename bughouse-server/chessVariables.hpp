@@ -1,5 +1,11 @@
-#ifndef CHESSVARIABLES_H
-#define CHESSVARIABLES_H
+#ifndef CHESSVARIABLES_HPP
+#define CHESSVARIABLES_HPP
+
+/* 
+    This file is intended to only hold variables to make
+    developing the bughouse server more easier.
+*/
+
 #define WK 0
 #define WQ 1
 #define WN 2

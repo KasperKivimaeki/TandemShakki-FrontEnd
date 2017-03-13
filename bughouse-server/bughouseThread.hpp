@@ -1,3 +1,6 @@
+#ifndef BUGHOUSETHREAD_HPP
+#define BUGHOUSETHREAD_HPP
+
 #include "chessVariables.hpp"
 
 struct bughouseGame{
@@ -14,3 +17,4 @@ int isPositionLegal(int sideToPlay, position game);
 
 int isCheck(position game);
 
+#endif

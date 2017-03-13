@@ -1,16 +1,49 @@
-/*
-   This file is part of TandemShakki-server.
+#include "communication.hpp"
+#include "bughouseThread.hpp"
+#include <iostream>
+#include <thread>
+#include <vector>
+#include <string>
 
-   TandemShakki-server is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+using std::string;
 
-   TandemShakki-server is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
+int MAXIMUMGAMES = 512;
 
-   You should have received a copy of the GNU General Public License
-   along with TandemShakki-server.  If not, see <http://www.gnu.org/licenses/>.
-*/
+void gameThread() {
+    std::cout << "Thread created\n";
+}
+
+
+int main() {
+    /* 
+        Open 512 threads that will wait for chess player names and moves.
+        If a game ends then remove thread and create new ones until 512.
+        If a command tells to stop creating games then program stops after
+        reaching 0 games.
+
+        Constantly listen for connections and accept those from PHP application.
+        Move PHP connections to separate threads.
+    */
+
+    // Create threads
+    std::vector<std::thread> games;
+    for (int i = 0; i < MAXIMUMGAMES; ++i) {
+        games.push_back(std::thread(gameThread));
+    }
+
+    while(1) {
+        // Read input until "STOP"
+        string userCall;
+        std::cin >> userCall;
+
+        std::size_t found = userCall.rfind("STOP");
+        if(found != string::npos) break;
+    }
+
+    // Join threads
+    for (int i = 0; i < MAXIMUMGAMES; ++i) {
+        games[i].join();
+    }
+
+}
+
