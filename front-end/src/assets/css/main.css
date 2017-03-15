@@ -1,0 +1,12 @@
+#main {
+    padding-top: 70px;
+}
+
+body {
+    background-color: black !important;
+    color: white;
+}
+
+#player-infos {
+    border: 3px solid orange;
+}

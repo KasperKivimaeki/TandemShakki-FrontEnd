@@ -1,21 +1,56 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset=”utf-8”></meta>
+        <title>Tandemshakki</title>
+        <!-- <link rel="icon" type="image/png" href="assets/images/favicon.ico"> -->
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="src/assets/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="src/assets/css/chessground.css"></link>
+        <link rel="stylesheet" href="src/assets/css/game.css"></link>
+        <link rel="stylesheet" href="src/assets/css/main.css"></link>
 
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-</head>
+    </head>
 
-<body data-ng-app="app">
-<p> TITLE</p>
-<div ng-app="myApp"  ng-controller="myCtrl">
-<h1>Herramme ja vapahtajamme {{name}}</h1>
-</div>
+    <body data-ng-app="app">
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    $scope.name= "lordi";
-});
-</script>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Tandemshakki</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#/">Etusivu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#/game">Pelilauta</a></li>
+                <li class="nav-item"><a class="nav-link" href="#/profile">Profiilisivu</a></li>
+            </ul>
+        </nav>
 
-</body>
+        <section id="main">
+            <div class="container">
+                <ng-view></ng-view>
+            </div>
+        </section>
+
+
+        <!-- ASSETS -->
+        <script src="src/assets/js/jquery.min.js"></script>
+        <script src="src/assets/js/bootstrap.min.js"></script>
+        <script src="src/assets/js/angular.min.js"></script>
+        <script src="src/assets/js/angular-route.js"></script>
+
+        <!-- BUGHOUSE -->
+        <script src="src/assets/js/chess.min.js"></script>
+        <script src="src/assets/js/chessground.js"></script>
+
+        <!-- MODULES -->
+        <script src="app.js"></script>
+        <script src="app.routes.js"></script>
+
+        <!-- CONTROLLERS -->
+        <script src="src/sections/home/home.ctrl.js"></script>
+        <script src="src/sections/game/game.ctrl.js"></script>
+        <script src="src/sections/profile/profile.ctrl.js"></script>
+
+    </body>
 </html>

@@ -1,26 +1,22 @@
-angular
-  .module('app.routes', ['ngRoute'])
-  .config(config);
-
-function config ($routeProvider) {
+app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'sections/home/home.tpl.html',
+      templateUrl: 'src/sections/home/home.tpl.html',
       controller: 'HomeController as home'
     })
     .when('/game', {
-      templateUrl: 'sections/game/game.tpl.html',
-      controller: 'HomeController as home'
+      templateUrl: 'src/sections/game/game.tpl.html',
+      controller: 'GameController as game'
     })
     .when('/profile', {
-      templateUrl: 'sections/profile/profile.tpl.html',
-      controller: 'HomeController as home'
+      templateUrl: 'src/sections/profile/profile.tpl.html',
+      controller: 'ProfileController as profile'
     })
     .when('/settings', {
-      templateUrl: 'sections/settings/settings.tpl.html',
-      controller: 'HomeController as home'
+      templateUrl: 'src/sections/settings/settings.tpl.html',
+      controller: 'SettingsController as settings'
     })
     .otherwise({
       reditectTo: '/'
     });
-}
+});
