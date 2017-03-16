@@ -1,9 +1,8 @@
-app.directive('chessBoards', function () {
-	var size = Number(element.text) ; 
-	return {
-		restrict:'E',
-		transclude: true,
-		template: "<div> </div>"
-		controller: "bughouseController as bughouseController"
-	}
+app.directive('bughouseBoard', function () {
+    return {
+        restrict:'E',
+        transclude: true,
+        template: '<div class="chessground wood cburnett" ng-controller="bughouseBoardController"></div>',
+        replace: true
+    };
 });

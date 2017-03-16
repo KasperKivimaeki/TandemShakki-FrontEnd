@@ -3,14 +3,35 @@
 }
 
 body {
+	font-family: 'Lato', sans-serif;
     background-color: black !important;
     color: white;
 }
 
 #player-infos {
-    border: 3px solid orange;
+    border: 2px solid orange;
+}
+
+#player-infos > div {
+ width: 100%;
+height: 50%;
+}
+
+#player-pieces {
+height: 40%;
+position: relative;
+}
+
+#player-infos > div > div > piece {
+height: 30px; 
+width: 30px; 
+top: 0;
+left: auto;
+position: static;
 }
 
 #player-infos > div > p {
-	text-align: justify;
+	text-align: center;
+	font-size: 125%;
+	bottom: 0;
 }
