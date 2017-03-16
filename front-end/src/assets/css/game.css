@@ -1,6 +1,8 @@
 .chessground {
     width: 400px;
     height: 400px;
+	margin-left: 24px;
+	margin-right: 24px;
 }
 
 .cg-board-wrap svg {
