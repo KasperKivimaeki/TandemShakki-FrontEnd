@@ -49,6 +49,7 @@ app.controller('GameController', ['$scope', function($scope) {
         color: chessToColor(chess),
         premove: true,
         dests: chessToDests(chess),
+        coordinates: false,
         events: {
           after: onMove
         }

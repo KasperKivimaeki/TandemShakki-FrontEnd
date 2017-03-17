@@ -1,6 +1,10 @@
 app.controller("bughouseBoardController", function($scope, $element) {
 
-    createBoard($element[0].id, "white", true);
+    $scope.spin = "white";
+    if( $element[0].className.includes("reverse") ) {
+        $scope.spin = "black";
+    }
+    createBoard($element[0].id, $scope.spin, false);
 
     function createBoard(id, spin, move) {
         var board;
@@ -19,6 +23,7 @@ app.controller("bughouseBoardController", function($scope, $element) {
         ground = Chessground(document.getElementById(id), {
             viewOnly: move,
             turnColor: "white",
+            coordinates: false,
             orientation: spin,
             animation: {
                 duration: 500

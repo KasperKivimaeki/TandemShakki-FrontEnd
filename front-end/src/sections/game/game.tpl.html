@@ -1,55 +1,67 @@
-<div class="d-flex"> 
+<div class="d-flex justify-content-around"> 
     <div class="d-flex align-content-between flex-wrap" id="player-infos">
-        <div id="player-info player-top">
-            <p>{{player1.name}}</p>
-            <p>{{player1.time}}</p>
-	    <div class="cburnett" id="player-pieces">
-		<piece data-role="pawn" class="pawn white"></piece>
-		<piece data-role="knight" class="knight white"></piece>
-		<piece data-role="bishop" class="bishop white"></piece>
-		<piece data-role="rook" class="rook white"></piece>
-		<piece data-role="queen" class="queen white"></piece>
-	    </div>
+        <div class="d-flex align-content-between flex-wrap">
+            <div class="d-flex-align-content-center flex-wrap">
+                <h1>{{player3.time}}</h1>
+            </div>
+            <div class="d-flex align-content-around cburnett">
+                <piece data-role="pawn" class="pawn black"></piece>
+                <piece data-role="knight" class="knight black"></piece>
+                <piece data-role="bishop" class="bishop black"></piece>
+                <piece data-role="rook" class="rook black"></piece>
+                <piece data-role="queen" class="queen black"></piece>
+            </div>
         </div>
-        <div id="player-info player-bottom">
-	    <div class="cburnett" id="player-pieces">
-		<piece data-role="pawn" class="pawn white"></piece>
-		<piece data-role="knight" class="knight white"></piece>
-		<piece data-role="bishop" class="bishop white"></piece>
-		<piece data-role="rook" class="rook white"></piece>
-		<piece data-role="queen" class="queen white"></piece>
-	    </div>
-            <p>{{player2.name}}</p>
-            <p>{{player2.time}}</p>
+        <div class="d-flex align-content-around flex-wrap">
+            <div class="d-flex align-content-center cburnett">
+                <piece data-role="pawn" class="pawn white"></piece>
+                <piece data-role="knight" class="knight white"></piece>
+                <piece data-role="bishop" class="bishop white"></piece>
+                <piece data-role="rook" class="rook white"></piece>
+                <piece data-role="queen" class="queen white"></piece>
+            </div>
+            <div>
+                <h1>{{player1.time}}</h1>
+            </div>
         </div>
     </div>
     <div class="d-flex justify-content-around">
-        <div class="chessground wood cburnett" id="ground7"></div>
+        <div id="bughouseBoard">
+            <p>{{player3.name}}</p>
+            <div class="chessground wood cburnett" id="ground7"></div>
+            <p>{{player1.name}}</p>
+        </div>
 
-        <div class="chessground wood cburnett" id="ground8"></div>
+        <div id="bughouseBoard">
+            <p>{{player4.name}}</p>
+            <div class="chessground wood cburnett" id="ground8"></div>
+            <p>{{player2.name}}</p>
+        </div>
     </div>
     <div class="d-flex align-content-between flex-wrap" id="player-infos">
-        <div id="player-info player-top">
-            <p>{{player1.name}}</p>
-            <p>{{player1.time}}</p>
-	    <div class="cburnett" id="player-pieces">
-		<piece data-role="pawn" class="pawn white"></piece>
-		<piece data-role="knight" class="knight white"></piece>
-		<piece data-role="bishop" class="bishop white"></piece>
-		<piece data-role="rook" class="rook white"></piece>
-		<piece data-role="queen" class="queen white"></piece>
-	    </div>
+        <div class="d-flex align-content-between flex-wrap">
+            <div class="d-flex-align-content-center flex-wrap">
+                <h1>{{player4.time}}</h1>
+            </div>
+            <div class="d-flex align-content-center cburnett">
+                <piece data-role="pawn" class="pawn white"></piece>
+                <piece data-role="knight" class="knight white"></piece>
+                <piece data-role="bishop" class="bishop white"></piece>
+                <piece data-role="rook" class="rook white"></piece>
+                <piece data-role="queen" class="queen white"></piece>
+            </div>
         </div>
-        <div id="player-info player-bottom">
-	    <div class="cburnett" id="player-pieces">
-		<piece data-role="pawn" class="pawn white"></piece>
-		<piece data-role="knight" class="knight white"></piece>
-		<piece data-role="bishop" class="bishop white"></piece>
-		<piece data-role="rook" class="rook white"></piece>
-		<piece data-role="queen" class="queen white"></piece>
-	    </div>
-            <p>{{player2.name}}</p>
-            <p>{{player2.time}}</p>
+        <div class="d-flex align-content-around flex-wrap">
+            <div class="d-flex align-content-around cburnett">
+                <piece data-role="pawn" class="pawn black"></piece>
+                <piece data-role="knight" class="knight black"></piece>
+                <piece data-role="bishop" class="bishop black"></piece>
+                <piece data-role="rook" class="rook black"></piece>
+                <piece data-role="queen" class="queen black"></piece>
+            </div>
+            <div>
+                <h1>{{player2.time}}</h1>
+            </div>
         </div>
     </div>
 </div>
