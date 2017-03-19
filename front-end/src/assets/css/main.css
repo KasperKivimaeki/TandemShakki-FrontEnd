@@ -44,7 +44,7 @@ body {
 
 #player-infos > div > div > piece {
     height: 100%; 
-    width: 25%; 
+    width: 20%; 
     position: static; /* Default */ 
 }
 

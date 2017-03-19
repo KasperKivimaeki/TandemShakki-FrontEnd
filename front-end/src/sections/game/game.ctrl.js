@@ -7,8 +7,8 @@ app.controller('GameController', ['$scope', function($scope) {
   $scope.player3 = {name:"Pelaaja kolme", time:"5:00", player: false};
   $scope.player4 = {name:"Pelaaja neljä", time:"5:00", player: false};
 
-  createBoard("ground7", "white", false);
-  createBoard("ground8", "black", true);
+  createBoard("ground7", "white");
+  createBoard("ground8", "black");
 
   function chessToDests(chess) {
     var dests = {};
@@ -23,7 +23,7 @@ app.controller('GameController', ['$scope', function($scope) {
     return (chess.turn() == "w") ? "white" : "black";
   }
 
-  function createBoard(id, spin, move) {
+  function createBoard(id, spin) {
     var board;
     var chess = new Chess();
     var onMove = function(orig, dest) {
@@ -35,21 +35,22 @@ app.controller('GameController', ['$scope', function($scope) {
           dests: chessToDests(chess)
         }
       });
+      console.log(id + chessToColor(chess));
       console.log(ground.getFen());
     };
-    ground = Chessground(document.getElementById(id), {
-      viewOnly: move,
-      turnColor: "white",
+    var ground = Chessground(document.getElementById(id), {
+      viewOnly: false,
+      turnColor: chessToColor(chess),
       orientation: spin,
+      autoCastle: true,
       animation: {
-        duration: 500
+        duration: 250
       },
       movable: {
-        free: true,
+        free: false,
         color: chessToColor(chess),
         premove: true,
         dests: chessToDests(chess),
-        coordinates: false,
         events: {
           after: onMove
         }
